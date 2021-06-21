@@ -26,7 +26,7 @@ class _MyAppState extends State<MyApp> {
     String result;
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
-      result = await WhiteListManager.platformVersion();
+      result = await WhiteListManager.requestBackgroundPermissionToWhiteList();
     } on PlatformException {
       result = 'Failed to add to the white list';
     }
