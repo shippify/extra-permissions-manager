@@ -8,6 +8,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.PowerManager;
+import android.os.SystemClock;
 import android.provider.Settings;
 
 import androidx.annotation.NonNull;
@@ -20,7 +21,6 @@ import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
-import io.flutter.plugin.common.PluginRegistry.Registrar;
 
 /** WhiteListManagerPlugin */
 public class WhiteListManagerPlugin implements FlutterPlugin, MethodCallHandler {
@@ -50,6 +50,8 @@ public class WhiteListManagerPlugin implements FlutterPlugin, MethodCallHandler 
       if (powerInt != null) {
         context.startActivity(powerInt);
       }
+    } if (call.method.equals("getElapsedTime")) {
+      result.success(SystemClock.elapsedRealtime());
     } else {
       result.notImplemented();
     }

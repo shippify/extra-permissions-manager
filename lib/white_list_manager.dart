@@ -15,4 +15,9 @@ class WhiteListManager {
     );
     return result;
   }
+
+  static Future<int> getElapsedTime() async {
+    final int result = await _channel.invokeMethod('getElapsedTime');
+    return result;
+  }
 }

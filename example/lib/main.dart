@@ -46,9 +46,14 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Add to white list'),
         ),
         body: Center(
-          child: Text(''),
+          child: FutureBuilder(
+              future: WhiteListManager.getElapsedTime(),
+              builder: (BuildContext context, data){
+                return Text('Elapsed time : ${data.data}');
+              },
         ),
       ),
+      )
     );
   }
 }
