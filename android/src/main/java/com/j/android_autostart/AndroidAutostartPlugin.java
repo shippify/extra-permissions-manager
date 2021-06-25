@@ -53,17 +53,14 @@ public class AndroidAutostartPlugin implements FlutterPlugin, MethodCallHandler 
   @Override
   public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
     if (call.method.equals("customSetComponent")) {
-      String manufacturer = call.argument("manufacturer");
-      String pkg = call.argument("pkg");
-      String cls = call.argument("cls");
-      customSetComponent(manufacturer,pkg,cls,result);
-    }else if(call.method.equals("navigateAutoStartSetting")) {
       String packageName = call.argument("package");
       Intent powerInt = prepareIntentForWhiteListingOfBatteryOptimization(context, packageName != null ? packageName : context.getPackageName(),false);
       if (powerInt != null) {
         context.startActivity(powerInt);
       }
       result.success("Request background");
+    }else if(call.method.equals("navigateAutoStartSetting")) {
+      navigateAutoStartSetting(result);
     } else{
       result.notImplemented();
     }
