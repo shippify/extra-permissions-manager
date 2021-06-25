@@ -2,11 +2,11 @@ import 'dart:async';
 
 import 'package:flutter/services.dart';
 
-class AndroidAutostart {
+class WhiteList {
   static const MethodChannel _channel =
       const MethodChannel('android_autostart');
 
-  static Future<String> get navigateAutoStartSetting async {
+  static Future<String> get addToWhiteList async {
     try {
       final String result =
           await _channel.invokeMethod('navigateAutoStartSetting');
