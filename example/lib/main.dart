@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
-
-import 'package:flutter/services.dart';
-import 'package:white_list_manager/white_list_manager.dart';
+import 'package:android_autostart/android_autostart.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,28 +11,9 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
   @override
   void initState() {
     super.initState();
-    initPlatformState();
-  }
-
-  // Platform messages are asynchronous, so we initialize in an async method.
-  Future<void> initPlatformState() async {
-    String result;
-    // Platform messages may fail, so we use a try/catch PlatformException.
-    try {
-      result = await WhiteListManager.requestBackgroundPermissionToWhiteList();
-    } on PlatformException {
-      result = 'Failed to add to the white list';
-    }
-
-    // If the widget was removed from the tree while the asynchronous platform
-    // message was in flight, we want to discard the reply rather than calling
-    // setState to update our non-existent appearance.
-    if (!mounted) return;
-
   }
 
   @override
@@ -43,17 +21,28 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Add to white list'),
+          title: const Text('Enable AutoStart Example App'),
         ),
         body: Center(
-          child: FutureBuilder(
-              future: WhiteListManager.getElapsedTime(),
-              builder: (BuildContext context, data){
-                return Text('Elapsed time : ${data.data}');
-              },
+          child: Column(
+            children: [
+              RaisedButton(
+                onPressed: () async => await AndroidAutostart.navigateAutoStartSetting,
+                child: Text("Navigate AutoStart Setting"),
+              ),
+              RaisedButton(
+                onPressed: () async => await AndroidAutostart.customSetComponent(
+                  manufacturer: "xiaomi",
+                  pkg: "com.miui.securitycenter",
+                  cls:
+                      "com.miui.permcenter.autostart.AutoStartManagementActivity",
+                ),
+                child: Text("Custom Set Component"),
+              ),
+            ],
+          ),
         ),
       ),
-      )
     );
   }
 }

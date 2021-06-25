@@ -1,8 +1,7 @@
-name: white_list_manager
-description: A new Flutter project.
-version: 0.0.1
-author:
-homepage:
+name: android_autostart
+description: You can request to enable AutoStart with Android AutoStart. Many Developers need to access AutoStart Setting Flutter including me, but there's no good plugin yet for autostart.So I decided to make AutoStart Plugin for Developers.
+version: 0.0.2
+homepage: https://github.com/shinewanna/AndroidAutoStartPlugin
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
@@ -28,10 +27,8 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.shippify.co.white_list_manager
-        pluginClass: WhiteListManagerPlugin
-      ios:
-        pluginClass: WhiteListManagerPlugin
+        package: com.j.android_autostart
+        pluginClass: AndroidAutostartPlugin
 
   # To add assets to your plugin package, add an assets section, like this:
   # assets:

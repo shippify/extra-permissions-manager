@@ -1,4 +1,4 @@
-group 'com.shippify.co.white_list_manager'
+group 'com.j.android_autostart'
 version '1.0'
 
 buildscript {

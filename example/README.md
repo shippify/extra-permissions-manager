@@ -1,6 +1,6 @@
-# white_list_manager_example
+# android_autostart_example
 
-Demonstrates how to use the white_list_manager plugin.
+Demonstrates how to use the android_autostart plugin.
 
 ## Getting Started
 
