@@ -1,4 +1,4 @@
-package com.j.android_autostart;
+package com.j.extra_permissions_manager;
 
 import android.content.ComponentName;
 import android.content.Context;
@@ -34,8 +34,8 @@ import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
 import io.flutter.embedding.engine.FlutterEngine;
 
-/** AndroidAutostartPlugin */
-public class AndroidAutostartPlugin implements FlutterPlugin, MethodCallHandler  {
+/** ExtraPermissionsManagerPlugin */
+public class ExtraPermissionsManagerPlugin implements FlutterPlugin, MethodCallHandler  {
   /// The MethodChannel that will the communication between Flutter and native Android
   ///
   /// This local reference serves to register the plugin with the Flutter Engine and unregister it
@@ -46,7 +46,7 @@ public class AndroidAutostartPlugin implements FlutterPlugin, MethodCallHandler 
   @Override
   public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
     context = flutterPluginBinding.getApplicationContext();
-    channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), "android_autostart");
+    channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), "extra_permissions_manager");
     channel.setMethodCallHandler(this);
   }
 

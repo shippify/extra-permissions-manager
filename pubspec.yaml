@@ -1,4 +1,4 @@
-name: android_autostart
+name: extra_permissions_manager
 description: You can request to enable AutoStart with Android AutoStart. Many Developers need to access AutoStart Setting Flutter including me, but there's no good plugin yet for autostart.So I decided to make AutoStart Plugin for Developers.
 version: 0.0.2
 homepage: https://github.com/shinewanna/AndroidAutoStartPlugin
@@ -27,8 +27,8 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.j.android_autostart
-        pluginClass: AndroidAutostartPlugin
+        package: com.j.extra_permissions_manager
+        pluginClass: ExtraPermissionsManagerPlugin
 
   # To add assets to your plugin package, add an assets section, like this:
   # assets:

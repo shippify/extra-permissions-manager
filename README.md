@@ -14,7 +14,7 @@ For help on editing plugin code, view the [documentation](https://flutter.io/pla
 
 ## Installation and Usage
 
-Add `android_autostart` to the dependencies list
+Add `extra_permissions_manager` to the dependencies list
 of the `pubspec.yaml` file as follow:
 
 ```yaml
@@ -22,7 +22,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  android_autostart: ^0.0.2
+  extra_permissions_manager: ^0.0.2
 ```
 
 Then run the command `flutter packages get` on the console.
@@ -30,7 +30,7 @@ Then run the command `flutter packages get` on the console.
 Import
 
 ```dart
-import 'package:android_autostart/android_autostart.dart';
+import 'package:extra_permissions_manager/extra_permissions_manager.dart';
 ```
 
 Navigate to AutoStart Setting.
@@ -43,13 +43,13 @@ navigateAutoStartSetting Supported Manufactures:
     - Honor
 
 ```dart
-     await AndroidAutostart.navigateAutoStartSetting;
+     await ExtraPermissionsManager.navigateAutoStartSetting;
 ```
 
 You can use CustomSetComponent.
 
 ```dart
-     await AndroidAutostart.customSetComponent(
+     await ExtraPermissionsManager.customSetComponent(
                   manufacturer: "xiaomi",
                   pkg: "com.miui.securitycenter",
                   cls:

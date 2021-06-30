@@ -2,9 +2,9 @@ import 'dart:async';
 
 import 'package:flutter/services.dart';
 
-class ExtraPermissionManager {
+class ExtraPermissionsManager {
   static const MethodChannel _channel =
-      const MethodChannel('android_autostart');
+      const MethodChannel('extra_permissions_manager');
 
   static Future<String> get addToWhiteList async {
     try {

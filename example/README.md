@@ -1,6 +1,6 @@
 # android_autostart_example
 
-Demonstrates how to use the android_autostart plugin.
+Demonstrates how to use the extra_permissions_manager plugin.
 
 ## Getting Started
 

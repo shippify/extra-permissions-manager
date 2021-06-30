@@ -1,4 +1,4 @@
-group 'com.j.android_autostart'
+group 'com.j.extra_permissions_manager'
 version '1.0'
 
 buildscript {

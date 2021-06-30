@@ -1,4 +1,4 @@
-package com.j.android_autostart_example;
+package com.j.extra_permissions_manager_example;
 
 import io.flutter.embedding.android.FlutterActivity;
 
