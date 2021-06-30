@@ -96,6 +96,8 @@ public class AndroidAutostartPlugin implements FlutterPlugin, MethodCallHandler 
         intent.setComponent(new ComponentName("com.letv.android.letvsafe", "com.letv.android.letvsafe.AutobootManageActivity"));
       } else if ("Honor".equalsIgnoreCase(manufacturer)) {
         intent.setComponent(new ComponentName("com.huawei.systemmanager", "com.huawei.systemmanager.optimize.process.ProtectActivity"));
+      }else if ("Huawei".equalsIgnoreCase(manufacturer)) {
+        intent.setComponent(new ComponentName("com.huawei.systemmanager", "com.huawei.systemmanager.startupmgr.ui.StartupNormalAppListActivity"));
       }else{
         return;
       }
