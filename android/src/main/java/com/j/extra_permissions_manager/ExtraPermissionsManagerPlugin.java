@@ -151,6 +151,9 @@ public class ExtraPermissionsManagerPlugin implements FlutterPlugin, MethodCallH
       default:
         break;
     }
+    if(intent != null){
+      intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+    }
     return intent;
   }
 
