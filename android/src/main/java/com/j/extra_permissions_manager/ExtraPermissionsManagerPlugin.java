@@ -61,6 +61,9 @@ public class ExtraPermissionsManagerPlugin implements FlutterPlugin, MethodCallH
       result.success("Request background");
     }else if(call.method.equals("navigateAutoStartSetting")) {
       navigateAutoStartSetting(result);
+    } else if(call.method.equals("isInWhiteList")) {
+      String packageName = call.argument("package");
+      result.success(getIfAppIsWhiteListedFromBatteryOptimizations(context, packageName != null ? packageName : context.getPackageName()));
     } else{
       result.notImplemented();
     }
