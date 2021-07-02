@@ -27,13 +27,13 @@ class ExtraPermissionsManager {
     }
   }
 
-  static Future<bool> get isInWhiteList async {
+  static Future<String> get isInWhiteList async {
     try {
-      final bool result =
+      final String result =
       await _channel.invokeMethod('isInWhiteList');
       return result;
     } catch (e) {
-      return false;
+      return e.toString();
     }
   }
 
